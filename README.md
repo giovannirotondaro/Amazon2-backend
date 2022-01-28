@@ -4,7 +4,7 @@
 ## Questo progetto è stato sviluppato per il corso di ASD utilizzando Angular, SpringBoot e PrimeNG.
 
 
-Sviluppato dal Team Amazon 2]:
+Sviluppato dal Team Amazon 2:
 + [Davide Ragona]
 + [Giovanni Rotondaro]
 + [Santo Locanto]
