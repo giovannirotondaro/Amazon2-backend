@@ -1,0 +1,95 @@
+/*C2*/SET SCHEMA PUBLIC
+alter table preferito drop constraint UKolsa19cejun7tapa4mw68erlr
+alter table preferito add constraint UKolsa19cejun7tapa4mw68erlr unique (id_prodotto, id_user)
+alter table prodotto_carrello drop constraint UKwjhb5u392pksxqxochti2beo
+alter table prodotto_carrello add constraint UKwjhb5u392pksxqxochti2beo unique (id_carrello, id_prodotto)
+/*C4*/SET SCHEMA PUBLIC
+INSERT INTO PRODOTTO_CARRELLO VALUES(2,1,4,5)
+COMMIT
+/*C2*/INSERT INTO PRODOTTO_CARRELLO VALUES(3,1,4,2)
+COMMIT
+INSERT INTO CARTA_CREDITO VALUES(2,'2023','123','03','1234567891254789','Mastercard','Giovanni Rotondaro')
+INSERT INTO UTENTE_CARTA VALUES(2,4)
+COMMIT
+INSERT INTO UTENTE_PRODOTTO VALUES(2,1,'NIENTE',NULL,2,4)
+COMMIT
+/*C3*/SET SCHEMA PUBLIC
+INSERT INTO UTENTE_PRODOTTO VALUES(3,1,'NIENTE',NULL,5,4)
+COMMIT
+/*C2*/DELETE FROM USER WHERE ID=1
+INSERT INTO USER VALUES(1,FALSE,'Ragona','1998-08-12','davyde8@gmail.com','M','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2FDRF02824%20copia2%202_1643370224232?alt=media&token=3de4a4df-6a83-46c1-b281-86d4f9bdc937','Davide','$2a$12$8wag4u9fYZNiwTO/S5xZeuGgwstAyLOIXuDIraM44dplUKZ3PJ5CC',879,692.1E0,'3922585112','davide')
+COMMIT
+/*C4*/DELETE FROM USER WHERE ID=5
+INSERT INTO USER VALUES(5,FALSE,'Boca','1996-01-01','paoloboca@libero.it','M','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2FSchermata%202022-01-28%20alle%2012.20.23_1643370672405?alt=media&token=1ebb764a-7743-4556-b67b-c0bb773c1a6e','Paolo','$2a$12$7AMGfXRpHkf2S9XS128oVOPh/y0XjJarsIFjOBGDNG/YoAaL7ThRC',0,1758.4E0,'3456789123','paolo')
+COMMIT
+DELETE FROM PRODOTTO WHERE ID=5
+INSERT INTO PRODOTTO VALUES(5,'FHD Anti-Glare, Intel Core 11ma gen i7-1165G7, RAM 8GB, 512GB SSD PCIE + 32GB Optane, grafica Intel Iris Xe Graphics, Win 10 Home, Grigio scuro','Computer','Grigio','2022-01-28','Notebook in alluminio con display FHD NanoEdge dai bordi ultra sottili, compatto e leggero: rapporto schermo-corpo del 90% e un peso di soli 1,17kg\u000aTastierino numerico NumberPad integrato nel mouse pad, cerniera ErgoLift con alzata ergonomica e tastiera con design edge-to-edge per un''esperienza di digitazione eccezionale e massimo comfort\u000aPrestazioni all''avanguardia con Processore Intel Core di Undicesima generazione i7-1165G7 e la nuova grafica Intel Iris Xe che garantiscono massime prestazioni per Notebook cos\u00ec sottili e leggeri, aggiornamento gratuito a Windows 11 non appena disponibile\u000aConnettivit\u00e0 completa e versatile grazie un set completo di porte I/O, al veloce WiFi 6 802.11ax e alla webcam HD a infrarossi IR per un rapido riconoscimento facciale','20x31',TRUE,'Asus','512','16','Zenbook 14',1.8E0,1099.0E0,2,20,'ASUS ZenBook 14','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fzen1_1643371583191?alt=media&token=4519e56b-2a82-4b24-8b8e-22c2f7cf4a48','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fzen2_1643371585932?alt=media&token=e8579e09-6296-48f0-8b23-e914279e2c69','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fzen3_1643371588763?alt=media&token=9dd554cd-b420-4164-9ae4-74f1beb1029c','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fzen4_1643371590337?alt=media&token=7fe48b4f-86d0-4a91-adbd-68feec090539',5)
+COMMIT
+/*C2*/DELETE FROM PRODOTTO WHERE ID=2
+INSERT INTO PRODOTTO VALUES(2,'15.6 Pollici Full View 1080P FHD Notebook PC Portatile, Intel Core i3-10110U, Lettore d''Impronta Digitale, 8 GB di RAM, SSD da 256 GB , Windows 10, Layout Italiano, Silver','Tablet','Silver','2022-01-28','Incredibile display Liquid Retina da 10.9 pollici con True Tone e P3 ampio colore\u000aChip bionico A14 con motore neurale\u000aID Touch per l''autenticazione sicura e Apple Pay\u000aFotocamera posteriore da 12 MP, videocamera anteriore FaceTime HD da 7 MP','18x25',TRUE,'Apple','128','4','Apple Ipad Air 10,9',1.0E0,669.0E0,4,10,'Ipad Air Apple 10,9''''','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fipad-1_1643371089028?alt=media&token=8bf24466-5632-4abd-96c6-cd12c4ff61f7','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fipad-2_1643371091668?alt=media&token=cdf300f5-c179-4ccd-88f5-419eb55d81cc','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fipad-3_1643371094177?alt=media&token=73c47f96-9315-4f10-a826-da39e7ef02ac','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fipad-4_1643371096711?alt=media&token=04650ea4-f651-4f6c-8a93-f678bcdb8e29',1)
+COMMIT
+DELETE FROM USER WHERE ID=4
+INSERT INTO USER VALUES(4,FALSE,'Rotondaro','1999-02-17','francociccio322@gmail.com','M','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2F245086698_1484689558564356_2485168575745083798_n_1643370621824?alt=media&token=d87c9c4e-8b39-456a-aebe-623f73dfd157','Giovanni','$2a$12$eYc/uqDP1dAHhMMB6f3iveiwypAIEHz4D8UP8.2gfxratSrxCNKim',2962,0.0E0,'3245678912','giovanni')
+COMMIT
+/*C3*/DELETE FROM PRODOTTO_CARRELLO WHERE ID=3
+COMMIT
+/*C5*/SET SCHEMA PUBLIC
+DELETE FROM PRODOTTO_CARRELLO WHERE ID=2
+COMMIT
+/*C4*/INSERT INTO PRODOTTO_CARRELLO VALUES(4,1,4,2)
+COMMIT
+/*C5*/INSERT INTO PRODOTTO_CARRELLO VALUES(5,1,4,3)
+COMMIT
+/*C4*/INSERT INTO UTENTE_PRODOTTO VALUES(4,1,'NIENTE',NULL,3,4)
+COMMIT
+/*C5*/INSERT INTO UTENTE_PRODOTTO VALUES(5,1,'NIENTE',NULL,2,4)
+COMMIT
+/*C3*/DELETE FROM USER WHERE ID=1
+INSERT INTO USER VALUES(1,FALSE,'Ragona','1998-08-12','davyde8@gmail.com','M','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2FDRF02824%20copia2%202_1643370224232?alt=media&token=3de4a4df-6a83-46c1-b281-86d4f9bdc937','Davide','$2a$12$8wag4u9fYZNiwTO/S5xZeuGgwstAyLOIXuDIraM44dplUKZ3PJ5CC',879,1294.2E0,'3922585112','davide')
+COMMIT
+/*C4*/DELETE FROM USER WHERE ID=2
+INSERT INTO USER VALUES(2,FALSE,'Locanto','1999-12-10','santino.locanto99@gmail.com','M','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2F220594123_243110174416234_8143339455940606080_n_1643370445470?alt=media&token=71cf6092-4e29-4b78-aed2-d3c5c4c605ee','Santino','$2a$12$0y690aQDogiS8AGrAm0fMuhfiMUEMmFueMMOdiZ1My8pzTQDtiTKG',0,220.15E0,'123987345','santino')
+COMMIT
+/*C2*/DELETE FROM PRODOTTO WHERE ID=3
+INSERT INTO PRODOTTO VALUES(3,'Lenovo 300e. Tipo di prodotto: Chromebook, Fattore di forma: Convertibile (a cartella). Famiglia processore: 7th Generation AMD A4-Series APUs','Computer','Nero','2022-01-28','Lenovo 300e. Tipo di prodotto: Chromebook, Fattore di forma: Convertibile (a cartella). Famiglia processore: 7th Generation AMD A4-Series APUs, Modello del processore: A4-9120C, Frequenza del processore: 1,6 GHz. Dimensioni schermo: 29,5 cm (11.6"), Risoluzione del display: 1366 x 768 Pixel, Touch screen. RAM installata: 4 GB, Tipo di RAM: DDR4-SDRAM. Capacit\u00e0 totale di archiviazione: 32 GB, Supporto di memoria: eMMC. Modello scheda grafica integrata: AMD Radeon R4. Sistema operativo incluso: Chrome OS. Colore del prodotto: Nero','30x44',TRUE,'Lenovo','128','4','Lenovo Chrome 300',2.0E0,259.0E0,4,15,'Lenovo NB Chrome 300E CHROMEBOOK Touch','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Flc1_1643371232259?alt=media&token=1856055b-da83-459d-bc38-a37e5d1ad119','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Flc2_1643371234978?alt=media&token=fa32d951-09f6-49ef-9812-a7f117893d91','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Flc3_1643371237541?alt=media&token=29bf61a0-747c-42ae-8eff-0f06ecbc4533','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Flc4_1643371240044?alt=media&token=1c136ac7-082e-43fa-bec4-e7b6ade03227',2)
+COMMIT
+/*C3*/DELETE FROM PRODOTTO WHERE ID=2
+INSERT INTO PRODOTTO VALUES(2,'15.6 Pollici Full View 1080P FHD Notebook PC Portatile, Intel Core i3-10110U, Lettore d''Impronta Digitale, 8 GB di RAM, SSD da 256 GB , Windows 10, Layout Italiano, Silver','Tablet','Silver','2022-01-28','Incredibile display Liquid Retina da 10.9 pollici con True Tone e P3 ampio colore\u000aChip bionico A14 con motore neurale\u000aID Touch per l''autenticazione sicura e Apple Pay\u000aFotocamera posteriore da 12 MP, videocamera anteriore FaceTime HD da 7 MP','18x25',TRUE,'Apple','128','4','Apple Ipad Air 10,9',1.0E0,669.0E0,3,10,'Ipad Air Apple 10,9''''','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fipad-1_1643371089028?alt=media&token=8bf24466-5632-4abd-96c6-cd12c4ff61f7','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fipad-2_1643371091668?alt=media&token=cdf300f5-c179-4ccd-88f5-419eb55d81cc','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fipad-3_1643371094177?alt=media&token=73c47f96-9315-4f10-a826-da39e7ef02ac','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2Fipad-4_1643371096711?alt=media&token=04650ea4-f651-4f6c-8a93-f678bcdb8e29',1)
+COMMIT
+/*C5*/DELETE FROM USER WHERE ID=4
+INSERT INTO USER VALUES(4,FALSE,'Rotondaro','1999-02-17','francociccio322@gmail.com','M','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/fotoProfilo%2F245086698_1484689558564356_2485168575745083798_n_1643370621824?alt=media&token=d87c9c4e-8b39-456a-aebe-623f73dfd157','Giovanni','$2a$12$eYc/uqDP1dAHhMMB6f3iveiwypAIEHz4D8UP8.2gfxratSrxCNKim',822,0.0E0,'3245678912','giovanni')
+COMMIT
+/*C2*/DELETE FROM PRODOTTO_CARRELLO WHERE ID=4
+COMMIT
+/*C4*/DELETE FROM PRODOTTO_CARRELLO WHERE ID=5
+COMMIT
+/*C3*/INSERT INTO RICHIESTA_CORRIERE VALUES(1,'Rossi',NULL,'2022-01-12','francociccio322@gmail.com','M',FALSE,'Mario',NULL,'12345678','https://firebasestorage.googleapis.com/v0/b/techzone-74633.appspot.com/o/pdfCorrieri%2FcurriculumProva_1643377451180?alt=media&token=a4b8594f-f643-4950-a647-2d23ccced721')
+COMMIT
+/*C4*/INSERT INTO CORRIERE VALUES(1,'Rossi','2022-01-12','francociccio322@gmail.com','M','Mario','$2a$12$tCWDT80Wn/3t08FRxQDIt.vHuDlqE2MKLEJtikyq/zW8t97Py/8By','12345678','corriere_7104')
+COMMIT
+DELETE FROM RICHIESTA_CORRIERE WHERE ID=1
+COMMIT
+/*C2*/DELETE FROM UTENTE_PRODOTTO WHERE ID=1
+INSERT INTO UTENTE_PRODOTTO VALUES(1,1,'PRESO_IN_CARICO',1,5,1)
+COMMIT
+DELETE FROM UTENTE_PRODOTTO WHERE ID=2
+INSERT INTO UTENTE_PRODOTTO VALUES(2,1,'PRESO_IN_CARICO',1,2,4)
+COMMIT
+/*C3*/DELETE FROM UTENTE_PRODOTTO WHERE ID=3
+INSERT INTO UTENTE_PRODOTTO VALUES(3,1,'PRESO_IN_CARICO',1,5,4)
+COMMIT
+/*C5*/DELETE FROM UTENTE_PRODOTTO WHERE ID=1
+INSERT INTO UTENTE_PRODOTTO VALUES(1,1,'IN_CONSEGNA',1,5,1)
+COMMIT
+/*C4*/DELETE FROM UTENTE_PRODOTTO WHERE ID=1
+INSERT INTO UTENTE_PRODOTTO VALUES(1,1,'CONSEGNATO',1,5,1)
+COMMIT
+/*C2*/DELETE FROM UTENTE_PRODOTTO WHERE ID=2
+INSERT INTO UTENTE_PRODOTTO VALUES(2,1,'IN_CONSEGNA',1,2,4)
+COMMIT
+/*C3*/DELETE FROM UTENTE_PRODOTTO WHERE ID=4
+INSERT INTO UTENTE_PRODOTTO VALUES(4,1,'PRESO_IN_CARICO',1,3,4)
+COMMIT
+/*C5*/DELETE FROM UTENTE_PRODOTTO WHERE ID=2
+INSERT INTO UTENTE_PRODOTTO VALUES(2,1,'CONSEGNATO',1,2,4)
+COMMIT
